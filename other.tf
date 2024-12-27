@@ -4,6 +4,7 @@ provider "aws" {                     #プロバイダーをAWSに指定
   region     = var.region            #本ハンズオンではvar.regionの指定は行わない。上記で入力したdefaultが反映されているかを確認する。
 }
 
+
 resource "aws_security_group" "web-sg-test2" {  #セキュリティグループの作成。これを設定しないと後ほどアクセスするコンソールにアクセスできなくなります。
     name = "Terraform-PoC-sg-tosa1234"                 #セキュリティグループの名前。好きな名前に書き換えてください
     ingress {                             #ingressの指定
