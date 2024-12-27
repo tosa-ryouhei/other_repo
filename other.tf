@@ -39,9 +39,8 @@ resource "aws_security_group" "terraform-import" {
 
 ## import ec2
 import{
- for_each = var.environment == "prod" ? ["this"] : []
  id="i-058469f6b8935cb09"
- to=aws_instance.terraform-import-instance
+ to=aws_instance.terraform-import-instance[each.value]
 }
 
 ## terraform import ec2
