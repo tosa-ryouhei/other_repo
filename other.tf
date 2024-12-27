@@ -41,6 +41,7 @@ resource "aws_security_group" "terraform-import" {
 import{
  id="i-058469f6b8935cb09"
  to=aws_instance.terraform-import-ec2
+}
 
 ## terraform import ec2
 resource "aws_instance" "terraform-import-ec2" {                              #EC2インスタンスの指定
