@@ -23,19 +23,19 @@ resource "aws_security_group" "web-sg-test2" {  #セキュリティグループ�
     }
 }
 
-# import
-import {
-  id="Terraform_PoC_sg_tosa111"
-  to=aws_security_group.terraform-import
-}
+## import
+#import {
+#  id="Terraform_PoC_sg_tosa111"
+#  to=aws_security_group.terraform-import
+#}
 
-# terraform import test
-resource "aws_security_group" "terraform-import" {
-#  security-group = "Terraform_PoC_sg_tosa111"
-  tags = {
-        Name = "Terraform_PoC_sg_tosa333"             #ご自身の名前に変えてみましょう
-    }
-}
+## terraform import test
+#resource "aws_security_group" "terraform-import" {
+##  security-group = "Terraform_PoC_sg_tosa111"
+#  tags = {
+#        Name = "Terraform_PoC_sg_tosa333"             #ご自身の名前に変えてみましょう
+#    }
+#}
 
 #resource "aws_instance" "web" {                              #EC2インスタンスの指定
 #    count = 1                                                #EC2インスタンスをいくつ作成するか。
