@@ -52,6 +52,6 @@ resource "aws_instance" "terraform-import-instance" {                           
 #    vpc_security_group_ids =  ["sg-06a30ee2dfbed96b9"]    
 
     tags = {
-        Name = "drift-detection-test333_${count.index}"                
+        Name = "drift-detection-test333"                
     }
 }
