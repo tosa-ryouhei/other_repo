@@ -44,11 +44,11 @@ import{
 }
 
 ## terraform import ec2
-resource "aws_instance" "terraform-import-ec2" {                              #EC2インスタンスの指定
-    count = 1                                                #EC2インスタンスをいくつ作成するか。
-    ami           = "ami-0d0150aa305b7226d"                  #amiの指定。ここでは決め打ちでAmazonLinux2を利用するようにしています。
-    instance_type = "t2.micro"                               #インスタンスタイプの指定。ここではt2.microを指定しています。
-    vpc_security_group_ids =  ["${aws_security_group.web-sg.name}"]        #セキュリティグループの結び付け。先ほど作成したセキュリティグループを紐づけています。
+resource "aws_instance" "terraform-import-instance" {                              #EC2インスタンスの指定
+#    count = 1                                                #EC2インスタンスをいくつ作成するか。
+#    ami           = "ami-0d0150aa305b7226d"                  #amiの指定。ここでは決め打ちでAmazonLinux2を利用するようにしています。
+#    instance_type = "t2.micro"                               #インスタンスタイプの指定。ここではt2.microを指定しています。
+#    vpc_security_group_ids =  ["${aws_security_group.web-sg.name}"]        #セキュリティグループの結び付け。先ほど作成したセキュリティグループを紐づけています。
 #    vpc_security_group_ids =  ["sg-06a30ee2dfbed96b9"]    
 
     tags = {
