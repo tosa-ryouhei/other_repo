@@ -10,22 +10,22 @@ provider "aws" {                     #プロバイダーをAWSに指定
   region     = var.region            #本ハンズオンではvar.regionの指定は行わない。上記で入力したdefaultが反映されているかを確認する。
 }
 
-resource "aws_security_group" "web-sg-test2" {  #セキュリティグループの作成。これを設定しないと後ほどアクセスするコンソールにアクセスできなくなります。
-    name = "Terraform-PoC-sg-tosa1234"                 #セキュリティグループの名前。好きな名前に書き換えてください
-    ingress {                             #ingressの指定
-      from_port = 22                      #22番ポートから22番ポートを対象とする
-      to_port = 22
-      protocol = "tcp"                    #セキュリティグループの対象プロトコルはicmp
-      cidr_blocks = ["0.0.0.0/0"]         #CIDRブロックのリスト。0.0.0.0/0の場合何も制限しないです。
-    }
-    tags = {
-        Name = "Terraform_PoC_sg_tosa222"             #ご自身の名前に変えてみましょう
-    }
-}
+#resource "aws_security_group" "web-sg-test2" {  #セキュリティグループの作成。これを設定しないと後ほどアクセスするコンソールにアクセスできなくなります。
+#    name = "Terraform-PoC-sg-tosa1234"                 #セキュリティグループの名前。好きな名前に書き換えてください
+#    ingress {                             #ingressの指定
+#      from_port = 22                      #22番ポートから22番ポートを対象とする
+#      to_port = 22
+#      protocol = "tcp"                    #セキュリティグループの対象プロトコルはicmp
+#      cidr_blocks = ["0.0.0.0/0"]         #CIDRブロックのリスト。0.0.0.0/0の場合何も制限しないです。
+#    }
+#    tags = {
+#        Name = "Terraform_PoC_sg_tosa222"             #ご自身の名前に変えてみましょう
+#    }
+#}
 
 ## import
 import {
-  id="Terraform_PoC_sg_tosa111"
+  id="sg-0b1568ca2e06c7102"
   to=aws_security_group.terraform-import
 }
 
