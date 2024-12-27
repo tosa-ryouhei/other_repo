@@ -1,3 +1,9 @@
+variable "access_key" {}             #アクセスキーの変数宣言
+variable "secret_key" {}             #シークレットキーの変数宣言
+variable "region" {                  #リージョンの変数宣言
+  default = "ap-northeast-1"         #リージョンタイプ
+}
+
 provider "aws" {                     #プロバイダーをAWSに指定
   access_key = var.access_key        #TerraformのVariablesのkey(access_key)のValueが入力される。
   secret_key = var.secret_key        #TerraformのVariablesのkey(secret_key)のValueが入力される。
